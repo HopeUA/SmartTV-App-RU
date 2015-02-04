@@ -26,14 +26,14 @@
 	<childlock itemtype="boolean">n</childlock>
 	<videomute itemtype="boolean">n</videomute>
 	<dcont itemtype="boolean">y</dcont>
-	<widgetname itemtype="string">Надежда ТВ</widgetname>
-	<description itemtype="string">Телеканал Надежда - это позитивное, семейное, домашнее телевидение, основанное на христианских ценностях.<br>В эфире: молодежные, семейные, детские, музыкальные, просветительские и познавательные программы.</description>
+	<widgetname itemtype="string">Hope TV</widgetname>
+	<description itemtype="string">blablabla</description>
 	<width itemtype="string">960</width>
 	<height itemtype="string">540</height>
 	<author itemtype="group"> 
-		<name itemtype="string">Медиацентр «Надежда»</name>
+		<name itemtype="string">Hope Media Center</name>
 		<email itemtype="string">nadezhda.tv@gmail.com</email>
 		<link itemtype="string">http://www.hopetv.ru/</link>
-		<organization itemtype="string">Медиацентр «Надежда»</organization>
+		<organization itemtype="string">Hope Media Center</organization>
 	</author>
 </widget>
