@@ -37,7 +37,9 @@ Main.onLoad = function() {
     AVPlayerRun();
 };
 
-Main.onUnload = function() {};
+Main.onUnload = function() {
+    Main.AVPlayer.stop();
+};
 
 Main.enableKeys = function() {
     document.getElementById('anchor').focus();

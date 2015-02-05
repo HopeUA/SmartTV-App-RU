@@ -4,16 +4,14 @@
 	<cplogo itemtype="string"></cplogo>
 	<cpauthjs itemtype="string"></cpauthjs>
 	
-	<BigThumbIcon>app/icon/115x95.png</BigThumbIcon>
-	<ThumbIcon>app/icon/106x88.png</ThumbIcon>
-	<BigListIcon>app/icon/95x78.png</BigListIcon>
-	<ListIcon>app/icon/85x70.png</ListIcon>
-	
-	<BigThumbIconHD>app/icon/173x143.png</BigThumbIconHD>
-	<ThumbIconHD>app/icon/158x130.png</ThumbIconHD>
-	<BigListIconHD>app/icon/143x118.png</BigListIconHD>
-	<ListIconHD>app/icon/128x105.png</ListIconHD>
-	<Icon1080>app/icon/128x105.png</Icon1080>
+	<ThumbIcon>app/icon/106x87.png</ThumbIcon>
+    <BigThumbIcon>app/icon/115x95.png</BigThumbIcon>
+    <ListIcon>app/icon/86x70.png</ListIcon>
+    <BigListIcon>app/icon/95x78.png</BigListIcon>
+    <ThumbIconHD>app/icon/HD/158x130.png</ThumbIconHD>
+    <BigThumbIconHD>app/icon/HD/173x143.png</BigThumbIconHD>
+    <ListIconHD>app/icon/HD/128x105.png</ListIconHD>
+    <BigListIconHD>app/icon/HD/143x118.png</BigListIconHD>
 	
 	<category itemtype="string">Video</category>
 	<autoUpdate itemtype="boolean">y</autoUpdate>
@@ -26,8 +24,8 @@
 	<childlock itemtype="boolean">n</childlock>
 	<videomute itemtype="boolean">n</videomute>
 	<dcont itemtype="boolean">y</dcont>
-	<widgetname itemtype="string">Hope TV</widgetname>
-	<description itemtype="string">blablabla</description>
+	<widgetname itemtype="string">Надежда ТВ</widgetname>
+	<description itemtype="string">Описание</description>
 	<width itemtype="string">960</width>
 	<height itemtype="string">540</height>
 	<author itemtype="group"> 
