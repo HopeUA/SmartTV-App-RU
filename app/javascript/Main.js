@@ -12,7 +12,7 @@ function AVPlayerInit() {
     }
 
     function onGetAVPlayError(error) {
-        // alert('#####onGetAVPlayError: ' + error.message);
+        alert('#####onGetAVPlayError: ' + error.message);
     }
 };
 
@@ -21,10 +21,10 @@ function AVPlayerRun() {
     Main.AVPlayer.play(onSuccessCB, onErrorCB);
 
     function onSuccessCB() {
-        // alert('Play Success');
+        alert('Play Success');
     }
     function onErrorCB(error) {
-        // alert('Play Error' + error.message);
+        alert('Play Error' + error.message);
     }
 }
 
@@ -38,7 +38,7 @@ Main.onLoad = function() {
 };
 
 Main.onUnload = function() {
-    Main.AVPlayer.stop();
+    // Main.AVPlayer.deinit();
 };
 
 Main.enableKeys = function() {
