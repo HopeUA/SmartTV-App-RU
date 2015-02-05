@@ -1,37 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget>
-	<cpname itemtype="string"></cpname>
-	<cplogo itemtype="string"></cplogo>
-	<cpauthjs itemtype="string"></cpauthjs>
-	
-	<ThumbIcon>app/icon/106x87.png</ThumbIcon>
+    <type>user</type>
+    <ver>1.0</ver>
+    <mgrver>1.000</mgrver>
+    <network>n</network>
+    <fullwidget>y</fullwidget>
+    <category>video</category>
+    <movie>n</movie>
+    <srcctl>n</srcctl>
+    <ticker>n</ticker>
+    <audiomute>y</audiomute>
+    <videomute>y</videomute>
+    <dcont>y</dcont> 
+    <apptype>11</apptype> 
+    <widgetname>Надежда ТВ</widgetname>
+    <description>Телеканал Надежда - это позитивное, семейное, домашнее телевидение, основанное на христианских ценностях. В эфире: молодежные, семейные, детские, музыкальные, просветительские и познавательные программы.</description>
+    <width>960</width>
+    <height>540</height>    
+    <ThumbIcon>app/icon/106x87.png</ThumbIcon>
     <BigThumbIcon>app/icon/115x95.png</BigThumbIcon>
-    <ListIcon>app/icon/86x70.png</ListIcon>
+    <ListIcon>app/icon/85x70.png</ListIcon>
     <BigListIcon>app/icon/95x78.png</BigListIcon>
     <ThumbIconHD>app/icon/HD/158x130.png</ThumbIconHD>
     <BigThumbIconHD>app/icon/HD/173x143.png</BigThumbIconHD>
     <ListIconHD>app/icon/HD/128x105.png</ListIconHD>
     <BigListIconHD>app/icon/HD/143x118.png</BigListIconHD>
-	
-	<category itemtype="string">Video</category>
-	<autoUpdate itemtype="boolean">y</autoUpdate>
-	<ver itemtype="string">1.0</ver>
-	<mgrver itemtype="string"></mgrver>
-	<fullwidget itemtype="boolean">y</fullwidget>
-	<type itemtype="string">user</type>
-	<srcctl itemtype="boolean">y</srcctl>
-	<ticker itemtype="boolean">n</ticker>
-	<childlock itemtype="boolean">n</childlock>
-	<videomute itemtype="boolean">n</videomute>
-	<dcont itemtype="boolean">y</dcont>
-	<widgetname itemtype="string">Надежда ТВ</widgetname>
-	<description itemtype="string">Описание</description>
-	<width itemtype="string">960</width>
-	<height itemtype="string">540</height>
-	<author itemtype="group"> 
-		<name itemtype="string">Hope Media Center</name>
-		<email itemtype="string">nadezhda.tv@gmail.com</email>
-		<link itemtype="string">http://www.hopetv.ru/</link>
-		<organization itemtype="string">Hope Media Center</organization>
-	</author>
+    <author>
+        <name>Hope Media Center</name>
+        <email>nadezhda.tv@gmail.com</email>
+        <link>http://www.hopetv.ru/</link>
+        <organization>Hope Media Center</organization>
+    </author>
 </widget>
