@@ -34,7 +34,11 @@ Main.onLoad = function() {
     widgetAPI.sendReadyEvent();
 
     AVPlayerInit();
+    // AVPlayerRun();
+
+    setTimeout(function(){
     AVPlayerRun();
+}, 2000);
 };
 
 Main.onUnload = function() {
