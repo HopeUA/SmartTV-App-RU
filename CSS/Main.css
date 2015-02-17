@@ -1,0 +1,22 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    position: relative;
+    color:#FFFFFF;
+    background-color: transparent;
+}
+
+body
+{
+    width: 960px; 
+    height: 540px;
+}
+
+#main
+{
+     position: absolute;
+     left: 0px; top: 0px;
+     width: 960px; height: 540px;
+}
