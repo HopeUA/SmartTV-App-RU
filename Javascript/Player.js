@@ -42,17 +42,12 @@ Player.init = function() {
 }
 
 Player.deinit = function() {
-	alert("Player deinit !!! ");
+	alert("Player deinit!");
 
 	if(this.plugin) {
-		//this.plugin.Stop();
 		this.plugin.Execute("Stop");
 		this.plugin.Close();
 	}
-}
-
-Player.setWindow = function() {
-	this.plugin.Execute('SetDisplayArea', 458, 58, 472, 270);
 }
 
 Player.setFullscreen = function() {
@@ -69,7 +64,7 @@ Player.playVideo = function() {
 	} else {
 		this.state = this.PLAYING;
 		Display.status("Play");
-		this.setWindow();
+		this.setFullscreen();
 		this.plugin.Execute("Play", this.url);
 		Audio.plugin.Execute('SetSystemMute',0);
 	}
@@ -212,16 +207,6 @@ function onEvent(event, param) {
 			break;
 			
 		case 19:	// OnSubtitle, param = subtitle string for current playing time
-			alert("Subtitle");
-			alert("Subtitle");
-			alert("Subtitle");
-			alert("Subtitle");
-			alert("Subtitle");
-			alert("Subtitle");
-			alert("Subtitle");
-			alert("Subtitle");
-			alert("Subtitle");
-			alert("Subtitle");
 			alert("Subtitle");
 			break;
 	}
