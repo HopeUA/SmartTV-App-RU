@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget>
-    <previewjs></previewjs>
-    <type>user</type>
-    <cpname></cpname>
-    <cplogo></cplogo>
-    <cpauthjs></cpauthjs>
 	<ThumbIcon itemtype="string">icon/106x87.png</ThumbIcon>
 	<BigThumbIcon itemtype="string">icon/115x95.png</BigThumbIcon>
 	<ListIcon itemtype="string">icon/85x70.png</ListIcon>
@@ -14,24 +9,36 @@
 	<ListIconHD itemtype="string">icon/128x105.png</ListIconHD>
 	<BigListIconHD itemtype="string">icon/143x118.png</BigListIconHD>
 	<Icon1080 itemtype="string">icon/128x105.png</Icon1080>
-    <ver>1.000</ver>
-    <mgrver></mgrver>
-    <fullwidget>y</fullwidget>
+	
+	<category>Videos</category>
+	<autoUpdate>y</autoUpdate>
+
+	<cpname></cpname>
+	<cpauthjs/>
+	<login>n</login>
+
+	<ver>1.005</ver>
+	<mgrver>2.000</mgrver>
+	
+	<fullwidget>y</fullwidget>
+	<srcctl>y</srcctl>
+	<ticker>n</ticker>
+	<childlock>n</childlock>
+	<audiomute>y</audiomute>
+	<videomute>y</videomute>
+	<dcont>y</dcont>
 	<movie>y</movie>
-    <srcctl>y</srcctl>
-    <ticker>n</ticker>
-    <childlock>n</childlock>
-    <audiomute>n</audiomute>
-    <videomute>n</videomute>
-    <dcont>y</dcont>
-    <widgetname>Надежда ТВ</widgetname>
-    <description>Телеканал Надежда — это позитивное, семейное, домашнее телевидение, основанное на христианских ценностях. В эфире: молодежные, семейные, детские, музыкальные, просветительские и познавательные программы.</description>
-    <width>960</width>
-    <height>540</height>
-    <author>
-        <name>Hope Media Center</name>
-        <email>nadezhda.tv@gmail.com</email>
-        <link>http://www.hopetv.ru/</link>
-        <organization>Hope Media Center</organization>
-    </author>
+
+	<widgetname>Надежда ТВ</widgetname>
+	<description>Телеканал Надежда — это позитивное, семейное, домашнее телевидение, основанное на христианских ценностях.</description>
+
+	<width>960</width>
+	<height>540</height>
+
+	<author>
+		<name>Hope Media Center</name>
+		<email>nadezhda.tv@gmail.com</email>
+		<link>http://www.hopetv.ru/</link>
+		<organization>Hope Media Center</organization>
+	</author>
 </widget>
