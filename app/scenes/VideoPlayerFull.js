@@ -1,22 +1,18 @@
+var playParams = {
+	url : 'http://live.tvhope.cdnvideo.ru/tvhope-pull/tvhope_1/playlist.m3u8|COMPONENT=HLS',
+	fullScreen : true,
+	title : 'Надежда ТВ',
+	liveStream : true,
+};
+
+var pluginAPI = new Common.API.Plugin();
+
 function SceneVideoPlayerFull(options) {
-	this.playList = [ {
-		url : 'http://live.tvhope.cdnvideo.ru/tvhope-pull/tvhope_1/playlist.m3u8|COMPONENT=HLS',
-		title : 'Надежда ТВ',
-	} ];
+
 }
 
 SceneVideoPlayerFull.prototype.initialize = function() {
 	alert("SceneVideoPlayerFull.initialize()");
-
-	var items = [];
-	for (var i = 0; i < this.playList.length; i++) {
-		items.push(this.playList[i].title);
-	}
-	$("#lstVideoPlayer").sfList({
-		data : items,
-		index : 0,
-		itemsPerPage : 8
-	}).sfList('blur');
 }
 
 SceneVideoPlayerFull.prototype.handleShow = function() {
@@ -29,11 +25,12 @@ SceneVideoPlayerFull.prototype.handleShow = function() {
 		err[sf.service.VideoPlayer.ERR_NOERROR] = 'NoError';
 		err[sf.service.VideoPlayer.ERR_NETWORK] = 'Network';
 		err[sf.service.VideoPlayer.ERR_NOT_SUPPORTED] = 'Not Supported';
-		_THIS_.printEvent('ERROR : ' + (err[error] || error)
-				+ (info ? ' (' + info + ')' : ''));
+		// _THIS_.printEvent('ERROR : ' + (err[error] || error)
+		// + (info ? ' (' + info + ')' : ''));
 	};
+
 	opt.onend = function() {
-		_THIS_.printEvent('END');
+		// _THIS_.printEvent('END');
 	};
 	opt.onstatechange = function(state, info) {
 		var stat = {};
@@ -43,23 +40,41 @@ SceneVideoPlayerFull.prototype.handleShow = function() {
 		stat[sf.service.VideoPlayer.STATE_BUFFERING] = 'Buffering';
 		stat[sf.service.VideoPlayer.STATE_SCANNING] = 'Scanning';
 
-		_THIS_.printEvent('StateChange : ' + (stat[state] || state)
-				+ (info ? ' (' + info + ')' : ''));
+		// _THIS_.printEvent('StateChange : ' + (stat[state] || state)
+		// + (info ? ' (' + info + ')' : ''));
 	};
-	sf.service.VideoPlayer.init(opt);
 
-	var item = this.playList[$("#lstVideoPlayer").sfList('getIndex')];
-	item.fullScreen = true;
-	sf.service.VideoPlayer.play(item);
+	sf.service.VideoPlayer.init(opt);
+	sf.service.VideoPlayer.play(playParams);
+	pluginAPI.setOffScreenSaver();
+	sf.service.setScreenSaver(false);
 
 	sf.service.VideoPlayer.setKeyHandler(sf.key.RETURN, function() {
-		// sf.service.VideoPlayer.stop();
 		sf.core.exit(false);
 	});
 
 	sf.service.VideoPlayer.setKeyHandler(sf.key.EXIT, function() {
-		// sf.service.VideoPlayer.stop();
 		sf.core.exit(false);
+	});
+
+	sf.service.VideoPlayer.setKeyHandler(sf.key.LEFT, function() {
+		alert("LEFT");
+	});
+
+	sf.service.VideoPlayer.setKeyHandler(sf.key.RIGHT, function() {
+		alert("RIGHT");
+	});
+
+	sf.service.VideoPlayer.setKeyHandler(sf.key.UP, function() {
+		alert("LEFT");
+	});
+
+	sf.service.VideoPlayer.setKeyHandler(sf.key.DOWN, function() {
+		alert("DOWN");
+	});
+
+	sf.service.VideoPlayer.setKeyHandler(sf.key.ENTER, function() {
+		alert("ENTER");
 	});
 }
 
@@ -69,25 +84,111 @@ SceneVideoPlayerFull.prototype.handleHide = function() {
 
 SceneVideoPlayerFull.prototype.handleFocus = function() {
 	alert("SceneVideoPlayerFull.handleFocus()");
-	$("#keyhelp").sfKeyHelp({
-		UPDOWN : 'Move Item',
-		ENTER : 'Play',
-		RETURN : 'Return'
-	});
-	$("#lstVideoPlayer").sfList('focus');
 }
 
 SceneVideoPlayerFull.prototype.handleBlur = function() {
 	alert("SceneVideoPlayerFull.handleBlur()");
-	$("#lstVideoPlayer").sfList('blur');
 }
 
 SceneVideoPlayerFull.prototype.handleKeyDown = function(keyCode) {
 	alert("SceneVideoPlayerFull.handleKeyDown(" + keyCode + ")");
+
+	sf.service.VideoPlayer.setKeyHandler(sf.key.LEFT, function() {
+		alert("LEFT");
+	});
+
+	sf.service.VideoPlayer.setKeyHandler(sf.key.RIGHT, function() {
+		alert("RIGHT");
+	});
+
+	sf.service.VideoPlayer.setKeyHandler(sf.key.UP, function() {
+		alert("LEFT");
+	});
+
+	sf.service.VideoPlayer.setKeyHandler(sf.key.DOWN, function() {
+		alert("DOWN");
+	});
+
+	sf.service.VideoPlayer.setKeyHandler(sf.key.ENTER, function() {
+		alert("ENTER");
+	});
+
+	switch (keyCode) {
+
+	case sf.key.ENTER:
+		alert("ENTER");
+	case sf.key.LEFT:
+		alert("LEFT");
+	case sf.key.RIGHT:
+		alert("RIGHT");
+	case sf.key.UP:
+		alert("UP");
+	case sf.key.DOWN:
+		alert("DOWN");
+	case sf.key.STOP:
+		sf.service.VideoPlayer.stop();
+		break;
+	case sf.key.PLAY:
+		sf.service.VideoPlayer.play(playParams);
+		break;
+	}
 }
 
 SceneVideoPlayerFull.prototype.printEvent = function(msg) {
 	alert("SceneVideoPlayerFull.prototype.printEvent(" + msg + ")");
-	document.getElementById("VideoPlayerEvent").innerHTML = msg + '<br>'
-			+ document.getElementById("VideoPlayerEvent").innerHTML;
+}
+
+var networkPlugin = document.getElementById('pluginObjectNetwork');
+var offlineMode = false;
+
+function cyclicInternetConnectionCheck() {
+
+	if (!checkConnection()) {
+		if (!offlineMode) {
+			swal({
+				title : "Проблема с подключением",
+				text : "Проверьте своё интернет-соединение",
+				type : "error",
+				showConfirmButton : false,
+				showCancelButton : false
+			});
+			sf.service.VideoPlayer.stop();
+		}
+
+		offlineMode = true;
+
+	} else {
+		console.log('internet connnection up');
+		if (offlineMode) {
+			swal.close();
+			sf.service.VideoPlayer.play(playParams);
+		}
+		offlineMode = false;
+	}
+}
+
+setInterval(cyclicInternetConnectionCheck, 1000);
+
+function checkConnection() {
+	console.log('checkConnection');
+	var gatewayStatus = 0,
+
+	currentInterface = networkPlugin.GetActiveType();
+
+	console.log(currentInterface);
+	if (currentInterface === -1) {
+		console.log('currentInterface -1');
+		return false;
+	}
+
+	gatewayStatus = networkPlugin.CheckGateway(currentInterface);
+	console.log(gatewayStatus);
+
+	if (gatewayStatus !== 1) {
+		console.log('gatewayStatus -1');
+		return false;
+	}
+
+	console.log('OK');
+	return true;
 }

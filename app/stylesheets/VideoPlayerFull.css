@@ -1,5 +1,6 @@
 #SceneVideoPlayerFull {
 	position: absolute;
+	/* z-index: 10; */
 	left: 0px;
 	top: 0px;
 	width: 960px;
